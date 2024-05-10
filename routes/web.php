@@ -6,6 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/generate', function (Request $request) {
     $post = Post::factory()->make();
-    $post->domain = $request->input('domain');
+    $post->domain = $request->input('domain') ?: $request->host();
     $post->save();
 });
