@@ -1,14 +1,20 @@
 ## Subscribing
+```
 POST - /api/subscribe
-with - {
+Data - {
 	email: 'your@email.address'
 }
-
-to subscribe
+```  
+Use insomnia or any API to subscribe
 
 ## Triggering mail queue
-visit /generate?domain=somethingyouwant
-this is to generate a new post and will blast anything who subscribe to the given domain
+```
+somethingyouwant.local/generate?domain=somethingyouwant.local
+```  
+Visit above url to generate a new post and will blast anything who subscribe to the given domain
 
 ## Queue the job
+```
 php artisan queue:work
+```  
+Remember to run the above command to make the queue work
