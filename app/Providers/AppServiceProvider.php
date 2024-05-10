@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(Domain::class, function (Application $app) {
-            return new Domain(request()->host());
+            return new Domain(request()->input('domain') ?: request()->host());
         });
     }
 

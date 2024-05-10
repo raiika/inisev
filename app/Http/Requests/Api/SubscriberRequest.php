@@ -30,7 +30,7 @@ class SubscriberRequest extends FormRequest
                 'email',
                 Rule::unique('subscribers')->where(fn (Builder $query) => $query->where('domain', $domain->get()))
             ],
-            'domain' => 'optional'
+            'domain' => 'nullable'
         ];
     }
 
